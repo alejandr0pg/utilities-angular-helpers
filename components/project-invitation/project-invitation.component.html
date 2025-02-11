@@ -1,0 +1,22 @@
+<app-table
+  [data]="invitations"
+  [columns]="columns"
+  [filterOptions]="filterOptions"
+  [actions]="actions"
+  [buttons]="tableButtons"
+  [loading]="!invitations"
+></app-table>
+
+<app-custom-modal-confirm
+  [loading]="loadingRemove"
+  [isOpen]="confirmDialogOpen"
+  [description]="confirmDialogMessage"
+  (confirm)="handlerRemoveInvitation()"
+  (closeDialog)="confirmDialogOpen = false"
+>
+</app-custom-modal-confirm>
+
+<app-invitation-modal
+  [isOpen]="invitationModalOpen"
+  (closeModal)="invitationModalOpen = false"
+></app-invitation-modal>
